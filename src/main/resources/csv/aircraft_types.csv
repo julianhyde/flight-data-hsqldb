@@ -1,0 +1,7 @@
+aircraft_type_id,description
+1,Glider
+2,Balloon
+3,Blimp/Dirigible
+4,"Fixed wing, single engine"
+5,"Fixed wing, multiple engine"
+6,Rotorcraft

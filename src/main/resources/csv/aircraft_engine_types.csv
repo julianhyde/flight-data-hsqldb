@@ -1,0 +1,9 @@
+aircraft_engine_type_id,description
+0,None
+1,Reciprocating
+2,Turbo-prop
+3,Turbo-shaft
+4,Turbo jet
+5,Turbine air generator
+6,Ramjet
+9,Unknown
