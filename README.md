@@ -130,25 +130,30 @@ Get flight-data-hsqldb from
 
 ### Download and build
 
-Prerequisites:
-
-* Maven 3.2.5 or higher
-* Java 8 or higher (11 preferred)
+Java version 8 or higher.
 
 Check out and build:
 
 ```bash
 $ git clone git://github.com/julianhyde/flight-data-hsqldb.git
 $ cd flight-data-hsqldb
-$ mvn install
+$ ./mvnw install
+```
+
+On Windows, the last line is
+
+```bash
+> mvnw install
 ```
 
 ## See also
 
 Similar data sets:
 
+* [chinook-data-hsqldb](https://github.com/julianhyde/chinook-data-hsqldb)
 * [foodmart-data-hsqldb](https://github.com/julianhyde/foodmart-data-hsqldb)
 * [scott-data-hsqldb](https://github.com/julianhyde/scott-data-hsqldb)
+* [steelwheels-data-hsqldb](https://github.com/julianhyde/steelwheels-data-hsqldb)
 
 ## More information
 
