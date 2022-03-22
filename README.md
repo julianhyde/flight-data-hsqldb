@@ -18,6 +18,8 @@ language governing permissions and limitations under the
 License.
 {% endcomment %}
 -->
+[![Build Status](https://github.com/julianhyde/flight-data-hsqldb/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/julianhyde/flight-data-hsqldb/actions?query=branch%3Amain)
+
 # flight-data-hsqldb
 FAA flight data set in hsqldb format
 
