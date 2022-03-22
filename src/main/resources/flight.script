@@ -1,34 +1,60 @@
-CREATE SCHEMA "FLIGHT" AUTHORIZATION DBA
+SET DATABASE UNIQUE NAME HSQLDB7F72B6630E
+SET DATABASE GC 0
+SET DATABASE DEFAULT RESULT MEMORY ROWS 0
+SET DATABASE EVENT LOG LEVEL 0
+SET DATABASE SQL REFERENCES FALSE
+SET DATABASE SQL SIZE TRUE
+SET DATABASE SQL NAMES FALSE
+SET DATABASE TRANSACTION CONTROL LOCKS
+SET DATABASE DEFAULT ISOLATION LEVEL READ COMMITTED
+SET FILES WRITE DELAY 500 MILLIS
+SET FILES BACKUP INCREMENT TRUE
+SET FILES CACHE SIZE 10000
+SET FILES CACHE ROWS 50000
+SET FILES SCALE 8
+SET FILES LOB SCALE 32
+SET FILES DEFRAG 20
+SET FILES NIO TRUE
+SET FILES LOG TRUE
+SET FILES LOG SIZE 50
+SET DATABASE TEXT TABLE DEFAULTS ''
+CREATE USER SA PASSWORD ''
+CREATE USER FLIGHT PASSWORD 'TIGER'
+CREATE SCHEMA PUBLIC AUTHORIZATION DBA
+CREATE SCHEMA "flight" AUTHORIZATION SA
 SET DATABASE TEXT TABLE DEFAULTS 'quoted=true;all_quoted=false;ignore_first=true;encoding=ASCII;cache_rows=10000;fs=,;qc="'
-CREATE TEXT TABLE "accidents"("event_id" VARCHAR(10), "investigation_type" VARCHAR(10), "accident_number" VARCHAR(10), "event_date" VARCHAR(10), "location" VARCHAR(10), "country" VARCHAR(10), "latitude" VARCHAR(10), "longitude" VARCHAR(10), "airport_code" VARCHAR(10), "airport_name" VARCHAR(10), "injury_severity" VARCHAR(10), "aircraft_damage" VARCHAR(10), "aircraft_category" VARCHAR(10), "registration_number" VARCHAR(10), "make" VARCHAR(10), "model" VARCHAR(10), "amateur_built" VARCHAR(10), "number_of_engines" VARCHAR(10), "engine_type" VARCHAR(10), "far_description" VARCHAR(10), "schedule" VARCHAR(10), "purpose_of_flight" VARCHAR(10), "air_carrier" VARCHAR(10), "number_of_fatalities" VARCHAR(10), "number_of_serious_injuries" VARCHAR(10), "number_of_minor_injuries" VARCHAR(10), "number_of_uninjured" VARCHAR(10), "weather_condition" VARCHAR(10), "broad_phase_of_flight" VARCHAR(10), "report_status" VARCHAR(10), "publication_date" VARCHAR(10), "id" VARCHAR(10))
-SET TABLE "accidents" SOURCE '/csv/accidents.csv;ignore_first=true' DESC
-CREATE TEXT TABLE "aircraft"("tail_num" VARCHAR(10), "aircraft_serial" VARCHAR(10), "aircraft_model_code" VARCHAR(10), "aircraft_engine_code" VARCHAR(10), "year_built" VARCHAR(10), "aircraft_type_id" VARCHAR(10), "aircraft_engine_type_id" VARCHAR(10), "registrant_type_id" VARCHAR(10), "name" VARCHAR(10), "address1" VARCHAR(10), "address2" VARCHAR(10), "city" VARCHAR(10), "state" VARCHAR(10), "zip" VARCHAR(10), "region" VARCHAR(10), "county" VARCHAR(10), "country" VARCHAR(10), "certification" VARCHAR(10), "status_code" VARCHAR(10), "mode_s_code" VARCHAR(10), "fract_owner" VARCHAR(10), "last_action_date" VARCHAR(10), "cert_issue_date" VARCHAR(10), "air_worth_date" VARCHAR(10))
-SET TABLE "aircraft" SOURCE '/csv/aircraft.csv;ignore_first=true' DESC
-CREATE TEXT TABLE "aircraft_engine_types"("aircraft_engine_type_id" VARCHAR(10), "description" VARCHAR(10))
-SET TABLE "aircraft_engine_types" SOURCE '/csv/aircraft_engine_types.csv;ignore_first=true' DESC
-CREATE TEXT TABLE "aircraft_engines"("aircraft_engine_code" VARCHAR(10), "manufacturer" VARCHAR(10), "model" VARCHAR(10), "aircraft_engine_type_id" VARCHAR(10), "horsepower" VARCHAR(10), "thrust" VARCHAR(10), "fuel_consumed" VARCHAR(10))
-SET TABLE "aircraft_engines" SOURCE '/csv/aircraft_engines.csv;ignore_first=true' DESC
-CREATE TEXT TABLE "aircraft_models"("aircraft_model_code" VARCHAR(10), "manufacturer" VARCHAR(10), "model" VARCHAR(10), "aircraft_type_id" VARCHAR(10), "aircraft_engine_type_id" VARCHAR(10), "aircraft_category_id" VARCHAR(10), "amateur" VARCHAR(10), "engines" VARCHAR(10), "seats" VARCHAR(10), "weight" VARCHAR(10), "speed" VARCHAR(10))
-SET TABLE "aircraft_models" SOURCE '/csv/aircraft_models.csv;ignore_first=true' DESC
-CREATE TEXT TABLE "aircraft_types"("aircraft_type_id" VARCHAR(10), "description" VARCHAR(10))
-SET TABLE "aircraft_types" SOURCE '/csv/aircraft_types.csv;ignore_first=true' DESC
-CREATE TEXT TABLE "airport_remarks"("airport_remark_id" VARCHAR(10), "site_number" VARCHAR(10), "element_name" VARCHAR(10), "remark" VARCHAR(10))
-SET TABLE "airport_remarks" SOURCE '/csv/airport_remarks.csv;ignore_first=true' DESC
-CREATE TEXT TABLE "airports"("id" VARCHAR(10), "code" VARCHAR(10), "site_number" VARCHAR(10), "fac_type" VARCHAR(10), "fac_use" VARCHAR(10), "faa_region" VARCHAR(10), "faa_dist" VARCHAR(10), "city" VARCHAR(10), "county" VARCHAR(10), "state" VARCHAR(10), "full_name" VARCHAR(10), "own_type" VARCHAR(10), "longitude" VARCHAR(10), "latitude" VARCHAR(10), "elevation" VARCHAR(10), "aero_cht" VARCHAR(10), "cbd_dist" VARCHAR(10), "cbd_dir" VARCHAR(10), "act_date" VARCHAR(10), "cert" VARCHAR(10), "fed_agree" VARCHAR(10), "cust_intl" VARCHAR(10), "c_ldg_rts" VARCHAR(10), "joint_use" VARCHAR(10), "mil_rts" VARCHAR(10), "cntl_twr" VARCHAR(10), "major" VARCHAR(10))
-SET TABLE "airports" SOURCE '/csv/airports.csv;ignore_first=true' DESC
-CREATE TEXT TABLE "carriers"("code" VARCHAR(10),"name" VARCHAR(10),"nickname" VARCHAR(10))
-SET TABLE "carriers" SOURCE '/csv/carriers.csv;ignore_first=true' DESC
-CREATE TEXT TABLE "exceptions"("carrier" VARCHAR(10), "bad_tail_num" VARCHAR(10), "good_tail_num" VARCHAR(10), "owner_name" VARCHAR(10), "first_seen" VARCHAR(10), "last_seen" VARCHAR(10))
-SET TABLE "exceptions" SOURCE '/csv/exceptions.csv;ignore_first=true' DESC
-CREATE TEXT TABLE "ontime"("carrier" VARCHAR(10), "origin" VARCHAR(10), "destination" VARCHAR(10), "flight_num" VARCHAR(10), "flight_time" VARCHAR(10), "tail_num" VARCHAR(10), "dep_time" VARCHAR(10), "arr_time" VARCHAR(10), "dep_delay" VARCHAR(10), "arr_delay" VARCHAR(10), "taxi_out" VARCHAR(10), "taxi_in" VARCHAR(10), "distance" VARCHAR(10), "cancelled" VARCHAR(10), "diverted" VARCHAR(10), "id2" VARCHAR(10))
-SET TABLE "ontime" SOURCE '/csv/ontime_00.csv;ignore_first=true;cache_rows=400000' DESC
-CREATE TEXT TABLE "states"("state_code" VARCHAR(10), "name" VARCHAR(10))
-SET TABLE "states" SOURCE '/csv/states.csv;ignore_first=true' DESC
-CREATE TEXT TABLE "zipcodes"("zipcode_id" VARCHAR(10), "zipcode" VARCHAR(10), "state_fips" VARCHAR(10), "state_code" VARCHAR(10), "name" VARCHAR(10), "longitude" VARCHAR(10), "latitude" VARCHAR(10), "population" VARCHAR(10), "allocation" VARCHAR(10))
-SET TABLE "zipcodes" SOURCE '/csv/zipcodes.csv;ignore_first=true' DESC
-CREATE USER SA PASSWORD ""
+CREATE TEXT TABLE "flight"."accidents"("event_id" VARCHAR(10), "investigation_type" VARCHAR(10), "accident_number" VARCHAR(10), "event_date" VARCHAR(10), "location" VARCHAR(10), "country" VARCHAR(10), "latitude" VARCHAR(10), "longitude" VARCHAR(10), "airport_code" VARCHAR(10), "airport_name" VARCHAR(10), "injury_severity" VARCHAR(10), "aircraft_damage" VARCHAR(10), "aircraft_category" VARCHAR(10), "registration_number" VARCHAR(10), "make" VARCHAR(10), "model" VARCHAR(10), "amateur_built" VARCHAR(10), "number_of_engines" VARCHAR(10), "engine_type" VARCHAR(10), "far_description" VARCHAR(10), "schedule" VARCHAR(10), "purpose_of_flight" VARCHAR(10), "air_carrier" VARCHAR(10), "number_of_fatalities" VARCHAR(10), "number_of_serious_injuries" VARCHAR(10), "number_of_minor_injuries" VARCHAR(10), "number_of_uninjured" VARCHAR(10), "weather_condition" VARCHAR(10), "broad_phase_of_flight" VARCHAR(10), "report_status" VARCHAR(10), "publication_date" VARCHAR(10), "id" VARCHAR(10))
+SET TABLE "flight"."accidents" SOURCE '/csv/accidents.csv;ignore_first=true' DESC
+CREATE TEXT TABLE "flight"."aircraft"("tail_num" VARCHAR(10), "aircraft_serial" VARCHAR(10), "aircraft_model_code" VARCHAR(10), "aircraft_engine_code" VARCHAR(10), "year_built" VARCHAR(10), "aircraft_type_id" VARCHAR(10), "aircraft_engine_type_id" VARCHAR(10), "registrant_type_id" VARCHAR(10), "name" VARCHAR(10), "address1" VARCHAR(10), "address2" VARCHAR(10), "city" VARCHAR(10), "state" VARCHAR(10), "zip" VARCHAR(10), "region" VARCHAR(10), "county" VARCHAR(10), "country" VARCHAR(10), "certification" VARCHAR(10), "status_code" VARCHAR(10), "mode_s_code" VARCHAR(10), "fract_owner" VARCHAR(10), "last_action_date" VARCHAR(10), "cert_issue_date" VARCHAR(10), "air_worth_date" VARCHAR(10))
+SET TABLE "flight"."aircraft" SOURCE '/csv/aircraft.csv;ignore_first=true' DESC
+CREATE TEXT TABLE "flight"."aircraft_engine_types"("aircraft_engine_type_id" VARCHAR(10), "description" VARCHAR(10))
+SET TABLE "flight"."aircraft_engine_types" SOURCE '/csv/aircraft_engine_types.csv;ignore_first=true' DESC
+CREATE TEXT TABLE "flight"."aircraft_engines"("aircraft_engine_code" VARCHAR(10), "manufacturer" VARCHAR(10), "model" VARCHAR(10), "aircraft_engine_type_id" VARCHAR(10), "horsepower" VARCHAR(10), "thrust" VARCHAR(10), "fuel_consumed" VARCHAR(10))
+SET TABLE "flight"."aircraft_engines" SOURCE '/csv/aircraft_engines.csv;ignore_first=true' DESC
+CREATE TEXT TABLE "flight"."aircraft_models"("aircraft_model_code" VARCHAR(10), "manufacturer" VARCHAR(10), "model" VARCHAR(10), "aircraft_type_id" VARCHAR(10), "aircraft_engine_type_id" VARCHAR(10), "aircraft_category_id" VARCHAR(10), "amateur" VARCHAR(10), "engines" VARCHAR(10), "seats" VARCHAR(10), "weight" VARCHAR(10), "speed" VARCHAR(10))
+SET TABLE "flight"."aircraft_models" SOURCE '/csv/aircraft_models.csv;ignore_first=true' DESC
+CREATE TEXT TABLE "flight"."aircraft_types"("aircraft_type_id" VARCHAR(10), "description" VARCHAR(10))
+SET TABLE "flight"."aircraft_types" SOURCE '/csv/aircraft_types.csv;ignore_first=true' DESC
+CREATE TEXT TABLE "flight"."airport_remarks"("airport_remark_id" VARCHAR(10), "site_number" VARCHAR(10), "element_name" VARCHAR(10), "remark" VARCHAR(10))
+SET TABLE "flight"."airport_remarks" SOURCE '/csv/airport_remarks.csv;ignore_first=true' DESC
+CREATE TEXT TABLE "flight"."airports"("id" VARCHAR(10), "code" VARCHAR(10), "site_number" VARCHAR(10), "fac_type" VARCHAR(10), "fac_use" VARCHAR(10), "faa_region" VARCHAR(10), "faa_dist" VARCHAR(10), "city" VARCHAR(10), "county" VARCHAR(10), "state" VARCHAR(10), "full_name" VARCHAR(10), "own_type" VARCHAR(10), "longitude" VARCHAR(10), "latitude" VARCHAR(10), "elevation" VARCHAR(10), "aero_cht" VARCHAR(10), "cbd_dist" VARCHAR(10), "cbd_dir" VARCHAR(10), "act_date" VARCHAR(10), "cert" VARCHAR(10), "fed_agree" VARCHAR(10), "cust_intl" VARCHAR(10), "c_ldg_rts" VARCHAR(10), "joint_use" VARCHAR(10), "mil_rts" VARCHAR(10), "cntl_twr" VARCHAR(10), "major" VARCHAR(10))
+SET TABLE "flight"."airports" SOURCE '/csv/airports.csv;ignore_first=true' DESC
+CREATE TEXT TABLE "flight"."carriers"("code" VARCHAR(10),"name" VARCHAR(10),"nickname" VARCHAR(10))
+SET TABLE "flight"."carriers" SOURCE '/csv/carriers.csv;ignore_first=true' DESC
+CREATE TEXT TABLE "flight"."exceptions"("carrier" VARCHAR(10), "bad_tail_num" VARCHAR(10), "good_tail_num" VARCHAR(10), "owner_name" VARCHAR(10), "first_seen" VARCHAR(10), "last_seen" VARCHAR(10))
+SET TABLE "flight"."exceptions" SOURCE '/csv/exceptions.csv;ignore_first=true' DESC
+CREATE TEXT TABLE "flight"."ontime"("carrier" VARCHAR(10), "origin" VARCHAR(10), "destination" VARCHAR(10), "flight_num" VARCHAR(10), "flight_time" VARCHAR(10), "tail_num" VARCHAR(10), "dep_time" VARCHAR(10), "arr_time" VARCHAR(10), "dep_delay" VARCHAR(10), "arr_delay" VARCHAR(10), "taxi_out" VARCHAR(10), "taxi_in" VARCHAR(10), "distance" VARCHAR(10), "cancelled" VARCHAR(10), "diverted" VARCHAR(10), "id2" VARCHAR(10))
+SET TABLE "flight"."ontime" SOURCE '/csv/ontime_00.csv;ignore_first=true;cache_rows=400000' DESC
+CREATE TEXT TABLE "flight"."states"("state_code" VARCHAR(10), "name" VARCHAR(10))
+SET TABLE "flight"."states" SOURCE '/csv/states.csv;ignore_first=true' DESC
+CREATE TEXT TABLE "flight"."zipcodes"("zipcode_id" VARCHAR(10), "zipcode" VARCHAR(10), "state_fips" VARCHAR(10), "state_code" VARCHAR(10), "name" VARCHAR(10), "longitude" VARCHAR(10), "latitude" VARCHAR(10), "population" VARCHAR(10), "allocation" VARCHAR(10))
+SET TABLE "flight"."zipcodes" SOURCE '/csv/zipcodes.csv;ignore_first=true' DESC
+ALTER USER FLIGHT SET INITIAL SCHEMA "flight"
+GRANT USAGE ON DOMAIN INFORMATION_SCHEMA.YES_OR_NO TO PUBLIC
+GRANT USAGE ON DOMAIN INFORMATION_SCHEMA.TIME_STAMP TO PUBLIC
+GRANT USAGE ON DOMAIN INFORMATION_SCHEMA.CARDINAL_NUMBER TO PUBLIC
+GRANT USAGE ON DOMAIN INFORMATION_SCHEMA.CHARACTER_DATA TO PUBLIC
+GRANT USAGE ON DOMAIN INFORMATION_SCHEMA.SQL_IDENTIFIER TO PUBLIC
 GRANT DBA TO SA
-CREATE USER FLIGHT PASSWORD "TIGER"
 GRANT DBA TO FLIGHT
-SET WRITE_DELAY 10
-SET SCHEMA "FLIGHT"
+SET SCHEMA "flight"

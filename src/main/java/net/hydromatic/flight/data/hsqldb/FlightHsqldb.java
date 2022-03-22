@@ -22,6 +22,7 @@ public class FlightHsqldb {
   public static final String URI = "jdbc:hsqldb:res:flight";
   public static final String USER = "FLIGHT";
   public static final String PASSWORD = "TIGER";
+  public static final String SCHEMA = "flight";
 }
 
 // End FlightHsqldb.java
