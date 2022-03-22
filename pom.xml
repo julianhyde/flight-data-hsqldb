@@ -25,7 +25,7 @@ limitations under the License.
   </parent>
 
   <artifactId>flight-data-hsqldb</artifactId>
-  <version>0.2-SNAPSHOT</version>
+  <version>0.2</version>
   <packaging>jar</packaging>
 
   <name>flight-data-hsqldb</name>
@@ -102,7 +102,7 @@ limitations under the License.
     <connection>scm:git:git://github.com/julianhyde/flight-data-hsqldb.git</connection>
     <developerConnection>scm:git:git@github.com:julianhyde/flight-data-hsqldb.git</developerConnection>
     <url>scm:git:git://github.com/julianhyde/flight-data-hsqldb.git</url>
-    <tag>HEAD</tag>
+    <tag>flight-data-hsqldb-0.2</tag>
   </scm>
 
   <dependencies>
