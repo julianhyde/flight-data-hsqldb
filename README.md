@@ -61,7 +61,7 @@ Add the following to your Maven pom.xml:
   <dependency>
     <groupId>net.hydromatic</groupId>
     <artifactId>flight-data-hsqldb</artifactId>
-    <version>0.1</version>
+    <version>0.2</version>
   </dependency>
 </dependencies>
 ```
@@ -88,7 +88,7 @@ Connect from the command line using the [SQLLine](https://github.com/julianhyde/
 
 ```
 $ ./sqlline
-sqlline version 1.8.0
+sqlline version 1.12.0
 sqlline> !connect jdbc:hsqldb:res:flight FLIGHT TIGER
 0: jdbc:hsqldb:res:flight> select * from "aircraft_types";
 +------------------+-----------------------------+
@@ -126,7 +126,7 @@ Get flight-data-hsqldb from
 <dependency>
   <groupId>net.hydromatic</groupId>
   <artifactId>flight-data-hsqldb</artifactId>
-  <version>0.1</version>
+  <version>0.2</version>
 </dependency>
 ```
 
