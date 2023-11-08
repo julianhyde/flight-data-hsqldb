@@ -19,6 +19,7 @@ License.
 {% endcomment %}
 -->
 [![Build Status](https://github.com/julianhyde/flight-data-hsqldb/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/julianhyde/flight-data-hsqldb/actions?query=branch%3Amain)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/net.hydromatic/flight-data-hsqldb/badge.svg)](https://maven-badges.herokuapp.com/maven-central/net.hydromatic/flight-data-hsqldb)
 
 # flight-data-hsqldb
 FAA flight data set in hsqldb format
